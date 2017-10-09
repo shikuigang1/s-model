@@ -1,0 +1,23 @@
+spring:
+    application:
+        name: regist-center
+
+server:
+    port: 10000 #启动端口
+
+eureka:
+    client:
+        register-with-eureka: false  #false:不作为一个客户端注册到注册中心
+        fetch-registry: false      #为true时，可以启动，但报异常：Cannot execute request on any known server
+        serviceUrl:
+              defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    server:
+        enable-self-preservation: false
+        eviction-interval-timer-in-ms: 5000 #清理无效节点 间隔时间  默认一分钟 单位毫秒
+
+    instance:
+        hostname: localhost
+        leaseRenewalIntervalInSeconds: 1
+        leaseExpirationDurationInSeconds: 5
+
+
