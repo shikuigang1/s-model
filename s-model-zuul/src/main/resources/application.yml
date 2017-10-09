@@ -9,18 +9,18 @@ spring:
         time-zone: GMT+8
         default-property-inclusion: non_null
     redis:
-        database: 0
+        database: 1
         host: 123.57.173.1
         port: 6379
         password: yxhy2017
-        timeout: 0
+        timeout: 30
                 #cluster:
                     #nodes: 192.168.211.134:7000,192.168.211.134:7001,192.168.211.134:7002
                     #nodes:192.168.1.79:6379
                     #maxRedirects: 6
         pool:
               max-active: 8
-              min-idle: 0
+              min-idle: 1
               max-idle: 8
               max-wait: -1
         session:
@@ -43,7 +43,7 @@ zuul:
     blog:
       path: /blog/**
       serviceId: blog-admin
-
+#add-host-header: true
 ribbon:
   eureka:
     enabled: true
@@ -66,14 +66,14 @@ security:
         password: admin
         role: USER
 
-#gate:
-#  ignore:
-#    startWith: /static
-#    contain: .
-#  oauth:
-#    prefix: /api
-#
-#  jwt:
-#    secret: Xe*g@1jda
-#    expiration: 7200
-#    header: access-token
+gate:
+  ignore:
+    startWith: /static
+    contain: .
+  oauth:
+    prefix: /api
+
+  jwt:
+    secret: Xe*g@1jda
+    expiration: 7200
+    header: access-token

@@ -9,13 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-
-/**
- * ${DESCRIPTION}
- *
- * @author wanghaobin
- * @create 2017-06-21 8:11
- */
 @FeignClient("admin-back")
 @RequestMapping("api")
 public interface IUserService {
