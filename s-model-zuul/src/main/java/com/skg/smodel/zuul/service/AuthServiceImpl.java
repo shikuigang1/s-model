@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.regex.Pattern;
 
-//@Service
+@Service
 public class AuthServiceImpl implements AuthService {
 
     private JwtTokenUtil jwtTokenUtil;

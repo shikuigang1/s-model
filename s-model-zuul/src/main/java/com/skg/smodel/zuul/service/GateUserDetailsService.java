@@ -19,7 +19,7 @@ import java.util.Set;
  * @author wanghaobin
  * @create 2017-06-22 13:00
  */
-//@Service
+@Service
 public class GateUserDetailsService implements UserDetailsService {
   @Autowired
   private UserSecurity userSecurity;
