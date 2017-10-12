@@ -1,11 +1,3 @@
-spring:
-    cloud:
-        config:
-            label: master
-            uri: http://localhost:8750
-            name: zuul-gate
-            profile: dev
-
 hystrix:
   command:
     default:

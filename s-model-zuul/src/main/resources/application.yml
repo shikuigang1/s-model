@@ -13,16 +13,16 @@ spring:
         host: 123.57.173.1
         port: 6379
         password: yxhy2017
-        timeout: 30
+        timeout: 3000
                 #cluster:
                     #nodes: 192.168.211.134:7000,192.168.211.134:7001,192.168.211.134:7002
                     #nodes:192.168.1.79:6379
                     #maxRedirects: 6
         pool:
-              max-active: 8
+              max-active: 1024
               min-idle: 1
-              max-idle: 8
-              max-wait: -1
+              max-idle: 200
+              max-wait: -1 #最大等待时间 -1 永不超时
         session:
               store-type: none
 
@@ -35,14 +35,6 @@ zuul:
     back:
       path: /back/**
       serviceId: admin-back
-
-    ui:
-      path: /admin/**
-      serviceId: admin-ui
-
-    blog:
-      path: /blog/**
-      serviceId: blog-admin
 #add-host-header: true
 ribbon:
   eureka:
