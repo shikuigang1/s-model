@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/*@SuppressWarnings("SpringJavaAutowiringInspection")
-@Component*/
+@SuppressWarnings("SpringJavaAutowiringInspection")
+@Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
     @Autowired
@@ -37,7 +37,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             FilterChain chain) throws ServletException, IOException {
         String authToken = request.getHeader(this.tokenHeader);
 
-        System.out.println("authToken=======>"+authToken);
+        //System.out.println("authToken=======>"+authToken);
 
         if (authToken != null) {
             String username = jwtTokenUtil.getUsernameFromToken(authToken);
