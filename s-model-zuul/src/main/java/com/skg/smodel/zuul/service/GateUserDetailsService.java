@@ -13,12 +13,6 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * ${DESCRIPTION}
- *
- * @author wanghaobin
- * @create 2017-06-22 13:00
- */
 @Service
 public class GateUserDetailsService implements UserDetailsService {
   @Autowired
