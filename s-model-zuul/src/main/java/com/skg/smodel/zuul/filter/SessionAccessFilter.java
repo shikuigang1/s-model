@@ -26,13 +26,13 @@ import java.net.URLEncoder;
 import java.util.*;
 import java.util.regex.Pattern;
 
-//@Component
+@Component
 //@Slf4j
 public class SessionAccessFilter extends ZuulFilter {
     @Autowired
     private SessionRepository<?> repository;
-   /* @Autowired
-    private IUserService userService;*/
+    @Autowired
+    private IUserService userService;
 
     @Value("${gate.ignore.startWith}")
     private String startWith;
@@ -71,15 +71,19 @@ public class SessionAccessFilter extends ZuulFilter {
         User user = getSessionUser(httpSession);
         String username = null;
         if(user!=null) {
-             username = user.getUsername();
+            username = user.getUsername();
             // 设置头部校验信息
             ctx.addZuulRequestHeader("Authorization",
                     Base64Utils.encodeToString(user.getUsername().getBytes()));
             // 查找合法链接
         }
         // 不进行拦截的地址
-       if (isStartWith(requestUri) || isContains(requestUri)|| isOAuth(requestUri))
+       if (isStartWith(requestUri) || isContains(requestUri)|| isOAuth(requestUri)){
+            //return null;
+        }else{
             return null;
+        }
+
         List<PermissionInfo> permissionInfos = userService.getAllPermissionInfo();
         // 判断资源是否启用权限约束
         Collection<PermissionInfo> result = getPermissionInfos(requestUri, method, permissionInfos);
