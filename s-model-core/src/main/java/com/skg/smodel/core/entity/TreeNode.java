@@ -1,4 +1,4 @@
-package com.skg.smodel.core.bean;
+package com.skg.smodel.core.entity;
 
 import java.util.ArrayList;
 import java.util.List;
