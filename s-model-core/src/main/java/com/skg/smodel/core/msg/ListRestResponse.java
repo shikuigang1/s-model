@@ -1,11 +1,4 @@
 package com.skg.smodel.core.msg;
-
-/**
- * ${DESCRIPTION}
- *
- * @author wanghaobin
- * @create 2017-06-09 7:32
- */
 public class ListRestResponse<T> {
     boolean rel;
     String msg;
