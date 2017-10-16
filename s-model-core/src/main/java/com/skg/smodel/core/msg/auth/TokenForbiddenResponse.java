@@ -1,4 +1,4 @@
-package com.skg.smodel.core.msg.msg.auth;
+package com.skg.smodel.core.msg.auth;
 
 import com.skg.smodel.core.constant.RestCodeConstants;
 import com.skg.smodel.core.msg.BaseResponse;

@@ -68,7 +68,7 @@ public class SendMsgUtil {
             response = client.execute(method);
             HttpEntity entity = response.getEntity();
             if (entity != null) {
-                responseText = EntityUtils.toString(entity, ENCODING);
+                responseText = entity.getContent().toString() ;
             }
         } catch (Exception e) {
             e.printStackTrace();
