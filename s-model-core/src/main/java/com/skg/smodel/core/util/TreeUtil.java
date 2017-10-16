@@ -1,13 +1,11 @@
 package com.skg.smodel.core.util;
 
-import com.skg.smodel.core.bean.TreeNode;
+import com.skg.smodel.core.entity.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Ace on 2017/6/12.
- */
+
 public class TreeUtil{
   /**
    * 两层循环实现建树
